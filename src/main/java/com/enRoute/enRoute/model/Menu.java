@@ -7,7 +7,6 @@ public class Menu {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long packageID;
     private Long storeHouseID;
     private Long deliverID;
