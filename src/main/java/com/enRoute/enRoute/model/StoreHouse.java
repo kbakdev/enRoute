@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+@Entity(name = "storeHouses")
 public class StoreHouse {
 
     @Id
@@ -13,7 +13,7 @@ public class StoreHouse {
     private String city;
     private String name;
 
-    @ManyToMany(mappedBy = "storeHouses")
+    @ManyToOne
     private Set<Deliver> delivers = new HashSet<>();
     private Set<Destination> destinations = new HashSet<>();
 
