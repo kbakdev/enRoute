@@ -5,17 +5,18 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity(name = "destinations")
+@Entity
 public class Destination {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @ManyToOne
     private Long destinationID;
     private String city;
     private String name;
-    private Set<Deliver> delivers;
-    private Set<StoreHouse> storeHouses;
+    @OneToMany
+    private Set<Deliver> delivers = new HashSet<>();
+    @OneToMany
+    private Set<StoreHouse> storeHouses = new HashSet<>();
 
     public Destination(Long destinationID, String city, String name) {
         this.destinationID = destinationID;

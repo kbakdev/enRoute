@@ -33,6 +33,5 @@ public class DBInflater implements ApplicationListener<ContextRefreshedEvent> {
     }
 
     private void initData() {
-
     }
 }
