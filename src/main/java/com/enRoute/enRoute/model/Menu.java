@@ -1,54 +1,60 @@
 package com.enRoute.enRoute.model;
 
-
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Menu {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long packageID;
     private Long storeHouseID;
     private Long deliverID;
     private Long destinationID;
 
-    public Menu(long packageID, long storeHouseID, long deliverID, long destinationID) {
+    public Menu(){
+
+    }
+
+    public Menu(Long packageID, Long storeHouseID, Long deliverID, Long destinationID) {
         this.packageID = packageID;
         this.storeHouseID = storeHouseID;
         this.deliverID = deliverID;
         this.destinationID = destinationID;
     }
 
-    public long getPackageID() {
+    public Long getPackageID() {
         return packageID;
     }
 
-    public void setPackageID(long packageID) {
+    public void setPackageID(Long packageID) {
         this.packageID = packageID;
     }
 
-    public long getStoreHouseID() {
+    public Long getStoreHouseID() {
         return storeHouseID;
     }
 
-    public void setStoreHouseID(long storeHouseID) {
+    public void setStoreHouseID(Long storeHouseID) {
         this.storeHouseID = storeHouseID;
     }
 
-    public long getDeliverID() {
+    public Long getDeliverID() {
         return deliverID;
     }
 
-    public void setDeliverID(long deliverID) {
+    public void setDeliverID(Long deliverID) {
         this.deliverID = deliverID;
     }
 
-    public long getDestinationID() {
+    public Long getDestinationID() {
         return destinationID;
     }
 
-    public void setDestinationID(long destinationID) {
+    public void setDestinationID(Long destinationID) {
         this.destinationID = destinationID;
     }
 
