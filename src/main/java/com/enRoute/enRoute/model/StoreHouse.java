@@ -9,13 +9,12 @@ public class StoreHouse {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @OneToMany
     private Long storeHouseID;
     private String city;
     private String name;
-
-    @ManyToOne
-    private Set<Deliver> delivers = new HashSet<>();
-    private Set<Destination> destinations = new HashSet<>();
+    private Set<Deliver> delivers;
+    private Set<Destination> destinations;
 
     public StoreHouse(Long storeHouseID, String city, String name) {
         this.storeHouseID = storeHouseID;

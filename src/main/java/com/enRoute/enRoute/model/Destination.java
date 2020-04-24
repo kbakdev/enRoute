@@ -10,13 +10,12 @@ public class Destination {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @OneToMany
     private Long destinationID;
     private String city;
     private String name;
-
-    @ManyToOne
-    private Set<Deliver> delivers = new HashSet<>();
-    private Set<StoreHouse> storeHouses = new HashSet<>();
+    private Set<Deliver> delivers;
+    private Set<StoreHouse> storeHouses;
 
     public Destination(Long destinationID, String city, String name) {
         this.destinationID = destinationID;

@@ -8,12 +8,11 @@ import java.util.Set;
 public class Deliver {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @OneToMany
     private Long deliverID;
     private String name;
-
-    @ManyToOne
-    private Set<Destination> destinations = new HashSet<>();
-    private Set<StoreHouse> storeHouses = new HashSet<>();
+    private Set<Destination> destinations;
+    private Set<StoreHouse> storeHouses;
 
     public Deliver(Long deliverID, String name) {
         this.deliverID = deliverID;
