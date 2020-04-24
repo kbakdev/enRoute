@@ -10,7 +10,7 @@ public class Destination {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @OneToMany
+    @ManyToOne
     private Long destinationID;
     private String city;
     private String name;

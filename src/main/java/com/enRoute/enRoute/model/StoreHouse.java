@@ -9,7 +9,7 @@ public class StoreHouse {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @OneToMany
+    @ManyToOne
     private Long storeHouseID;
     private String city;
     private String name;

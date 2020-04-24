@@ -8,7 +8,7 @@ import java.util.Set;
 public class Deliver {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @OneToMany
+    @ManyToOne
     private Long deliverID;
     private String name;
     private Set<Destination> destinations;

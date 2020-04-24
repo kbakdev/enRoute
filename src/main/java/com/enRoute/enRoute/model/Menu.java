@@ -2,13 +2,17 @@ package com.enRoute.enRoute.model;
 
 import javax.persistence.*;
 
+@Entity
 public class Menu {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long packageID;
+    @ManyToOne
     private Long storeHouseID;
+    @ManyToOne
     private Long deliverID;
+    @ManyToOne
     private Long destinationID;
 
     public Menu(){
