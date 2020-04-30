@@ -1,6 +1,8 @@
 package com.enRoute.enRoute.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Menu {
@@ -8,15 +10,17 @@ public class Menu {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long packageID;
-    private Long storeHouseID;
-    private Long deliverID;
-    private Long destinationID;
+    @ManyToOne
+    private StoreHouse storeHouseID;
+    @ManyToOne
+    private Deliver deliverID;
+    @ManyToOne
+    private  Destination destinationID;
 
     public Menu(){
-
     }
 
-    public Menu(Long packageID, Long storeHouseID, Long deliverID, Long destinationID) {
+    public Menu(Long packageID, StoreHouse storeHouseID, Deliver deliverID, Destination destinationID) {
         this.packageID = packageID;
         this.storeHouseID = storeHouseID;
         this.deliverID = deliverID;
@@ -31,27 +35,27 @@ public class Menu {
         this.packageID = packageID;
     }
 
-    public Long getStoreHouseID() {
+    public StoreHouse getStoreHouseID() {
         return storeHouseID;
     }
 
-    public void setStoreHouseID(Long storeHouseID) {
+    public void setStoreHouseID(StoreHouse storeHouseID) {
         this.storeHouseID = storeHouseID;
     }
 
-    public Long getDeliverID() {
+    public Deliver getDeliverID() {
         return deliverID;
     }
 
-    public void setDeliverID(Long deliverID) {
+    public void setDeliverID(Deliver deliverID) {
         this.deliverID = deliverID;
     }
 
-    public Long getDestinationID() {
+    public Destination getDestinationID() {
         return destinationID;
     }
 
-    public void setDestinationID(Long destinationID) {
+    public void setDestinationID(Destination destinationID) {
         this.destinationID = destinationID;
     }
 

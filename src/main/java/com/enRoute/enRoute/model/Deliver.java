@@ -10,21 +10,13 @@ public class Deliver {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long deliverID;
     private String name;
-    @OneToMany
-    private Set<Destination> destinations = new HashSet<>();
-    @OneToMany
-    private Set<StoreHouse> storeHouses = new HashSet<>();
+
+    public Deliver() {
+    }
 
     public Deliver(Long deliverID, String name) {
         this.deliverID = deliverID;
         this.name = name;
-    }
-
-    public Deliver(Long deliverID, String name, Set<Destination> destinations, Set<StoreHouse> storeHouses){
-        this.deliverID = deliverID;
-        this.name = name;
-        this.destinations = destinations;
-        this.storeHouses = storeHouses;
     }
 
     public Long getDeliverID() {
@@ -43,29 +35,11 @@ public class Deliver {
         this.name = name;
     }
 
-    public Set<Destination> getDestinations() {
-        return destinations;
-    }
-
-    public void setDestinations(Set<Destination> destinations) {
-        this.destinations = destinations;
-    }
-
-    public Set<StoreHouse> getStoreHouses() {
-        return storeHouses;
-    }
-
-    public void setStoreHouses(Set<StoreHouse> storeHouses) {
-        this.storeHouses = storeHouses;
-    }
-
     @Override
     public String toString() {
         return "Deliver{" +
                 "deliverID=" + deliverID +
                 ", name='" + name + '\'' +
-                ", destinations=" + destinations +
-                ", storeHouses=" + storeHouses +
                 '}';
     }
 }

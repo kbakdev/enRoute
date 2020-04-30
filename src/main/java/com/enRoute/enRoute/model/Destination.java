@@ -13,23 +13,14 @@ public class Destination {
     private Long destinationID;
     private String city;
     private String name;
-    @OneToMany
-    private Set<Deliver> delivers = new HashSet<>();
-    @OneToMany
-    private Set<StoreHouse> storeHouses = new HashSet<>();
+
+    public Destination() {
+    }
 
     public Destination(Long destinationID, String city, String name) {
         this.destinationID = destinationID;
         this.city = city;
         this.name = name;
-    }
-
-    public Destination(Long destinationID, String city, String name, Set<Deliver> delivers, Set<StoreHouse> storeHouses){
-        this.destinationID = destinationID;
-        this.city = city;
-        this.name = name;
-        this.delivers = delivers;
-        this.storeHouses = storeHouses;
     }
 
     public Long getDestinationID() {
@@ -56,30 +47,12 @@ public class Destination {
         this.name = name;
     }
 
-    public Set<Deliver> getDelivers(){
-        return delivers;
-    }
-
-    public void setDelivers(Set<Deliver> delivers) {
-        this.delivers = delivers;
-    }
-
-    public Set<StoreHouse> getStoreHouses(){
-        return storeHouses;
-    }
-
-    public void setStoreHouses(Set<StoreHouse> storeHouses){
-        this.storeHouses = storeHouses;
-    }
-
     @Override
     public String toString() {
         return "Destination{" +
                 "destinationID=" + destinationID +
                 ", city='" + city + '\'' +
                 ", name='" + name + '\'' +
-                ", delivers=" + delivers +
-                ", storeHouses=" + storeHouses +
                 '}';
     }
 }
