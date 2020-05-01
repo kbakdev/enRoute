@@ -5,29 +5,33 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Table(name = "storeHouse")
 public class StoreHouse {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long storeHouseID;
+    @Column(name="storeHouse_id")
+    private Long storeHouse;
+    @Column(name = "storeHouse_city")
     private String city;
+    @Column(name = "storeHouse_name")
     private String name;
 
     public StoreHouse() {
     }
 
-    public StoreHouse(Long storeHouseID, String city, String name) {
-        this.storeHouseID = storeHouseID;
+    public StoreHouse(Long storeHouse, String city, String name) {
+        this.storeHouse = storeHouse;
         this.city = city;
         this.name = name;
     }
 
-    public Long getStoreHouseID() {
-        return storeHouseID;
+    public Long getStoreHouse() {
+        return storeHouse;
     }
 
-    public void setStoreHouseID(Long storeHouseID) {
-        this.storeHouseID = storeHouseID;
+    public void setStoreHouse(Long storeHouse) {
+        this.storeHouse = storeHouse;
     }
 
     public String getCity() {
@@ -49,7 +53,7 @@ public class StoreHouse {
     @Override
     public String toString() {
         return "StoreHouse{" +
-                "storeHouseID=" + storeHouseID +
+                "storeHouse=" + storeHouse +
                 ", city='" + city + '\'' +
                 ", name='" + name + '\'' +
                 '}';

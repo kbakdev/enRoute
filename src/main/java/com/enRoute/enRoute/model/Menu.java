@@ -9,63 +9,69 @@ public class Menu {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long packageID;
-    @ManyToOne
-    private StoreHouse storeHouseID;
-    @ManyToOne
-    private Deliver deliverID;
-    @ManyToOne
-    private  Destination destinationID;
+    @Column(name = "parcel_id")
+    private Long parcel;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "storeHouse_id")
+    private StoreHouse storeHouse;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "deliver_id")
+    private Deliver deliver;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "destination_id")
+    private  Destination destination;
 
     public Menu(){
     }
 
-    public Menu(Long packageID, StoreHouse storeHouseID, Deliver deliverID, Destination destinationID) {
-        this.packageID = packageID;
-        this.storeHouseID = storeHouseID;
-        this.deliverID = deliverID;
-        this.destinationID = destinationID;
+    public Menu(Long parcel, StoreHouse storeHouse, Deliver deliver, Destination destination) {
+        this.parcel = parcel;
+        this.storeHouse = storeHouse;
+        this.deliver = deliver;
+        this.destination = destination;
     }
 
-    public Long getPackageID() {
-        return packageID;
+    public Long getParcel() {
+        return parcel;
     }
 
-    public void setPackageID(Long packageID) {
-        this.packageID = packageID;
+    public void setParcel(Long parcel) { this.parcel = parcel;
     }
 
-    public StoreHouse getStoreHouseID() {
-        return storeHouseID;
+    public StoreHouse getStoreHouse() {
+        return storeHouse;
     }
 
-    public void setStoreHouseID(StoreHouse storeHouseID) {
-        this.storeHouseID = storeHouseID;
+    public void setStoreHouse(StoreHouse storeHouse) {
+        this.storeHouse = storeHouse;
     }
 
-    public Deliver getDeliverID() {
-        return deliverID;
+    public Deliver getDeliver() {
+        return deliver;
     }
 
-    public void setDeliverID(Deliver deliverID) {
-        this.deliverID = deliverID;
+    public void setDeliver(Deliver deliver) {
+        this.deliver = deliver;
     }
 
-    public Destination getDestinationID() {
-        return destinationID;
+    public Destination getDestination() {
+        return destination;
     }
 
-    public void setDestinationID(Destination destinationID) {
-        this.destinationID = destinationID;
+    public void setDestination(Destination destination) {
+        this.destination = destination;
     }
 
     @Override
     public String toString() {
         return "Menu{" +
-                "packageID=" + packageID +
-                ", storeHouseID=" + storeHouseID +
-                ", deliverID=" + deliverID +
-                ", destinationID=" + destinationID +
+                "parcel=" + parcel +
+                ", storeHouse=" + storeHouse +
+                ", deliver=" + deliver +
+                ", destination=" + destination +
                 '}';
     }
 }

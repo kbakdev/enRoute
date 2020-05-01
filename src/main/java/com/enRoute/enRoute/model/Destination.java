@@ -6,29 +6,33 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Table(name = "destination")
 public class Destination {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long destinationID;
+    @Column(name = "destination_id")
+    private Long destination;
+    @Column(name = "destination_city")
     private String city;
+    @Column(name = "destination_name")
     private String name;
 
     public Destination() {
     }
 
-    public Destination(Long destinationID, String city, String name) {
-        this.destinationID = destinationID;
+    public Destination(Long destination, String city, String name) {
+        this.destination = destination;
         this.city = city;
         this.name = name;
     }
 
-    public Long getDestinationID() {
-        return destinationID;
+    public Long getDestination() {
+        return destination;
     }
 
-    public void setDestinationID(Long destinationID) {
-        this.destinationID = destinationID;
+    public void setDestination(Long destination) {
+        this.destination = destination;
     }
 
     public String getCity() {
@@ -50,7 +54,7 @@ public class Destination {
     @Override
     public String toString() {
         return "Destination{" +
-                "destinationID=" + destinationID +
+                "destination=" + destination +
                 ", city='" + city + '\'' +
                 ", name='" + name + '\'' +
                 '}';

@@ -1,30 +1,32 @@
 package com.enRoute.enRoute.model;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
+@Table(name = "deliver")
 public class Deliver {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long deliverID;
+    @Column(name = "deliver_id")
+    private Long deliver;
+    @Column(name = "deliver_name")
     private String name;
 
     public Deliver() {
     }
 
-    public Deliver(Long deliverID, String name) {
-        this.deliverID = deliverID;
+    public Deliver(Long deliver, String name) {
+        this.deliver = deliver;
         this.name = name;
     }
 
-    public Long getDeliverID() {
-        return deliverID;
+    public Long getDeliver() {
+        return deliver;
     }
 
-    public void setDeliverID(Long deliverID) {
-        this.deliverID = deliverID;
+    public void setDeliver(Long deliver) {
+        this.deliver = deliver;
     }
 
     public String getName() {
@@ -38,7 +40,7 @@ public class Deliver {
     @Override
     public String toString() {
         return "Deliver{" +
-                "deliverID=" + deliverID +
+                "deliver=" + deliver +
                 ", name='" + name + '\'' +
                 '}';
     }
