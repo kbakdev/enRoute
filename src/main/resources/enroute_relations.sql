@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Struktura tabeli dla tabeli `deliver`
 --
 
-CREATE TABLE `deliver` (
+CREATE TABLE `Deliver` (
   `deliver_id` int(11) NOT NULL,
   `deliver_name` char(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -36,7 +36,7 @@ CREATE TABLE `deliver` (
 -- Zrzut danych tabeli `deliver`
 --
 
-INSERT INTO `deliver` (`deliver_id`, `deliver_name`) VALUES
+INSERT INTO `Deliver` (`deliver_id`, `deliver_name`) VALUES
 (1, 'Przesłano dalej'),
 (2, 'Oczekiwanie'),
 (3, 'Poczta'),
@@ -54,7 +54,7 @@ INSERT INTO `deliver` (`deliver_id`, `deliver_name`) VALUES
 -- Struktura tabeli dla tabeli `destination`
 --
 
-CREATE TABLE `destination` (
+CREATE TABLE `Destination` (
   `destination_id` int(11) NOT NULL,
   `destination_city` char(50) NOT NULL,
   `destination_name` char(50) NOT NULL
@@ -64,7 +64,7 @@ CREATE TABLE `destination` (
 -- Zrzut danych tabeli `destination`
 --
 
-INSERT INTO `destination` (`destination_id`, `destination_city`, `destination_name`) VALUES
+INSERT INTO `Destination` (`destination_id`, `destination_city`, `destination_name`) VALUES
 (1, 'Oczekiwanie', 'Oczekiwanie'),
 (2, 'Kielce', 'Parcel locker'),
 (3, 'Poznań', 'Parcel locker'),
@@ -82,7 +82,7 @@ INSERT INTO `destination` (`destination_id`, `destination_city`, `destination_na
 -- Struktura tabeli dla tabeli `menu`
 --
 
-CREATE TABLE `menu` (
+CREATE TABLE `Menu` (
   `parcel_id` int(11) NOT NULL,
   `storeHouse_id` int(50) NOT NULL,
   `deliver_id` int(50) NOT NULL,
@@ -93,7 +93,7 @@ CREATE TABLE `menu` (
 -- Zrzut danych tabeli `menu`
 --
 
-INSERT INTO `menu` (`parcel_id`, `storeHouse_id`, `deliver_id`, `destination_id`) VALUES
+INSERT INTO `Menu` (`parcel_id`, `storeHouse_id`, `deliver_id`, `destination_id`) VALUES
 (1, 5, 2, 1),
 (2, 1, 1, 6),
 (3, 1, 8, 1),
@@ -108,20 +108,20 @@ INSERT INTO `menu` (`parcel_id`, `storeHouse_id`, `deliver_id`, `destination_id`
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `storehause`
+-- Struktura tabeli dla tabeli `storehouse`
 --
 
-CREATE TABLE `storehause` (
-  `storeHause_id` int(11) NOT NULL,
-  `storeHause_city` char(50) NOT NULL,
-  `storeHause_name` char(50) NOT NULL
+CREATE TABLE `Storehouse` (
+  `storeHouse_id` int(11) NOT NULL,
+  `storeHouse_city` char(50) NOT NULL,
+  `storeHouse_name` char(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Zrzut danych tabeli `storehause`
+-- Zrzut danych tabeli `storehouse`
 --
 
-INSERT INTO `storehause` (`storeHause_id`, `storeHause_city`, `storeHause_name`) VALUES
+INSERT INTO `Storehouse` (`storeHouse_id`, `storeHouse_city`, `storeHouse_name`) VALUES
 (1, 'Przesłano dalej', 'Przesłano dalej'),
 (2, 'Poznań', 'Morele'),
 (3, 'Kielce', 'Media Expert'),
@@ -140,29 +140,29 @@ INSERT INTO `storehause` (`storeHause_id`, `storeHause_city`, `storeHause_name`)
 --
 -- Indeksy dla tabeli `deliver`
 --
-ALTER TABLE `deliver`
+ALTER TABLE `Deliver`
   ADD PRIMARY KEY (`deliver_id`);
 
 --
 -- Indeksy dla tabeli `destination`
 --
-ALTER TABLE `destination`
+ALTER TABLE `Destination`
   ADD PRIMARY KEY (`destination_id`);
 
 --
 -- Indeksy dla tabeli `menu`
 --
-ALTER TABLE `menu`
+ALTER TABLE `Menu`
   ADD PRIMARY KEY (`parcel_id`),
   ADD KEY `storeHouse_id` (`storeHouse_id`),
   ADD KEY `deliver_id` (`deliver_id`),
   ADD KEY `destination_id` (`destination_id`);
 
 --
--- Indeksy dla tabeli `storehause`
+-- Indeksy dla tabeli `storehouse`
 --
-ALTER TABLE `storehause`
-  ADD PRIMARY KEY (`storeHause_id`);
+ALTER TABLE `Storehouse`
+  ADD PRIMARY KEY (`storeHouse_id`);
 
 --
 -- Ograniczenia dla zrzutów tabel
@@ -171,10 +171,10 @@ ALTER TABLE `storehause`
 --
 -- Ograniczenia dla tabeli `menu`
 --
-ALTER TABLE `menu`
-  ADD CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`storeHouse_id`) REFERENCES `storehause` (`storeHause_id`),
-  ADD CONSTRAINT `menu_ibfk_2` FOREIGN KEY (`deliver_id`) REFERENCES `deliver` (`deliver_id`),
-  ADD CONSTRAINT `menu_ibfk_3` FOREIGN KEY (`destination_id`) REFERENCES `destination` (`destination_id`);
+ALTER TABLE `Menu`
+  ADD CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`storeHouse_id`) REFERENCES `Storehouse` (`storeHouse_id`),
+  ADD CONSTRAINT `menu_ibfk_2` FOREIGN KEY (`deliver_id`) REFERENCES `Deliver` (`deliver_id`),
+  ADD CONSTRAINT `menu_ibfk_3` FOREIGN KEY (`destination_id`) REFERENCES `Destination` (`destination_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

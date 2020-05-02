@@ -108,20 +108,20 @@ INSERT INTO `Menu` (`parcel_id`, `storeHouse_id`, `deliver_id`, `destination_id`
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `storehause`
+-- Struktura tabeli dla tabeli `storehouse`
 --
 
-CREATE TABLE `Storehause` (
-  `storeHause_id` int(11) NOT NULL,
-  `storeHause_city` char(50) NOT NULL,
-  `storeHause_name` char(50) NOT NULL
+CREATE TABLE `StoreHouse` (
+  `storeHouse_id` int(11) NOT NULL,
+  `storeHouse_city` char(50) NOT NULL,
+  `storeHouse_name` char(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Zrzut danych tabeli `storehause`
+-- Zrzut danych tabeli `storehouse`
 --
 
-INSERT INTO `Storehause` (`storeHause_id`, `storeHause_city`, `storeHause_name`) VALUES
+INSERT INTO `StoreHouse` (`storeHouse_id`, `storeHouse_city`, `storeHouse_name`) VALUES
 (1, 'Przesłano dalej', 'Przesłano dalej'),
 (2, 'Poznań', 'Morele'),
 (3, 'Kielce', 'Media Expert'),
@@ -152,14 +152,14 @@ ALTER TABLE `Destination`
 --
 -- Indeksy dla tabeli `menu`
 --
-ALTER TABLE `Denu`
+ALTER TABLE `Menu`
   ADD PRIMARY KEY (`parcel_id`);
 
 --
--- Indeksy dla tabeli `storehause`
+-- Indeksy dla tabeli `storehouse`
 --
-ALTER TABLE `Dtorehause`
-  ADD PRIMARY KEY (`storeHause_id`);
+ALTER TABLE `StoreHouse`
+  ADD PRIMARY KEY (`storeHouse_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
