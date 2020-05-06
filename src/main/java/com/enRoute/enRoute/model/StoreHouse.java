@@ -5,16 +5,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "StoreHouse")
 public class StoreHouse {
 
     @Id
-    @Column(name = "storeHouse_id")
     private Long storeHouse_id;
-    @Column(name = "storeHouse_city")
     private String city;
-    @Column(name = "storeHouse_name")
     private String name;
+
 
     public StoreHouse() {
     }

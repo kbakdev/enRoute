@@ -3,29 +3,26 @@ package com.enRoute.enRoute.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "deliver")
 public class Deliver {
 
     @Id
-    @Column(name = "deliver_id")
-    private Long deliver;
-    @Column(name = "deliver_name")
+    private Long deliver_id;
     private String name;
 
     public Deliver() {
     }
 
-    public Deliver(Long deliver, String name) {
-        this.deliver = deliver;
+    public Deliver(Long deliver_id, String name) {
+        this.deliver_id = deliver_id;
         this.name = name;
     }
 
-    public Long getDeliver() {
-        return deliver;
+    public Long getDeliver_id() {
+        return deliver_id;
     }
 
-    public void setDeliver(Long deliver) {
-        this.deliver = deliver;
+    public void setDeliver_id(Long deliver_id) {
+        this.deliver_id = deliver_id;
     }
 
     public String getName() {
@@ -39,7 +36,7 @@ public class Deliver {
     @Override
     public String toString() {
         return "Deliver{" +
-                "deliver=" + deliver +
+                "deliver_id=" + deliver_id +
                 ", name='" + name + '\'' +
                 '}';
     }

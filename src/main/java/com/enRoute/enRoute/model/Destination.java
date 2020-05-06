@@ -6,32 +6,28 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "destination")
 public class Destination {
 
     @Id
-    @Column(name = "destination_id")
-    private Long destination;
-    @Column(name = "destination_city")
+    private Long destination_id;
     private String city;
-    @Column(name = "destination_name")
     private String name;
 
     public Destination() {
     }
 
-    public Destination(Long destination, String city, String name) {
-        this.destination = destination;
+    public Destination(Long destination_id, String city, String name) {
+        this.destination_id = destination_id;
         this.city = city;
         this.name = name;
     }
 
-    public Long getDestination() {
-        return destination;
+    public Long getDestination_id() {
+        return destination_id;
     }
 
-    public void setDestination(Long destination) {
-        this.destination = destination;
+    public void setDestination_id(Long destination_id) {
+        this.destination_id = destination_id;
     }
 
     public String getCity() {
@@ -53,9 +49,10 @@ public class Destination {
     @Override
     public String toString() {
         return "Destination{" +
-                "destination=" + destination +
+                "destination_id=" + destination_id +
                 ", city='" + city + '\'' +
                 ", name='" + name + '\'' +
                 '}';
     }
 }
+
