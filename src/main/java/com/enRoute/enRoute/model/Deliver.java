@@ -7,7 +7,6 @@ import javax.persistence.*;
 public class Deliver {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "deliver_id")
     private Long deliver;
     @Column(name = "deliver_name")

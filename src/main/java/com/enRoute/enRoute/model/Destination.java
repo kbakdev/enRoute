@@ -10,7 +10,6 @@ import java.util.Set;
 public class Destination {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "destination_id")
     private Long destination;
     @Column(name = "destination_city")

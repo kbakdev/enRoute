@@ -1,8 +1,11 @@
 package com.enRoute.enRoute.model;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+
+/**
+ * @author Kacper Bąk, Paweł Norwa
+ *
+ */
 
 @Entity
 public class Menu {
@@ -14,54 +17,49 @@ public class Menu {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "storeHouse_id")
-    private StoreHouse storeHouse;
+    private Long storeHouse;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "deliver_id")
-    private Deliver deliver;
+    private Long deliver;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "destination_id")
-    private  Destination destination;
+    private Long destination;
 
-    public Menu(){
-    }
 
-    public Menu(Long parcel, StoreHouse storeHouse, Deliver deliver, Destination destination) {
-        this.parcel = parcel;
-        this.storeHouse = storeHouse;
-        this.deliver = deliver;
-        this.destination = destination;
+    public Menu(Long parcel, Long storeHouse, Long deliver, Long destination) {
     }
 
     public Long getParcel() {
         return parcel;
     }
 
-    public void setParcel(Long parcel) { this.parcel = parcel;
+    public void setParcel(Long parcel) {
+        this.parcel = parcel;
     }
 
-    public StoreHouse getStoreHouse() {
+    public Long getStoreHouse() {
         return storeHouse;
     }
 
-    public void setStoreHouse(StoreHouse storeHouse) {
+    public void setStoreHouse(Long storeHouse) {
         this.storeHouse = storeHouse;
     }
 
-    public Deliver getDeliver() {
+    public Long getDeliver() {
         return deliver;
     }
 
-    public void setDeliver(Deliver deliver) {
+    public void setDeliver(Long deliver) {
         this.deliver = deliver;
     }
 
-    public Destination getDestination() {
+    public Long getDestination() {
         return destination;
     }
 
-    public void setDestination(Destination destination) {
+    public void setDestination(Long destination) {
         this.destination = destination;
     }
 

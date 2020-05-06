@@ -5,11 +5,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "storeHouse")
+@Table(name = "StoreHouse")
 public class StoreHouse {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="storeHouse_id")
     private Long storeHouse;
     @Column(name = "storeHouse_city")
