@@ -17,18 +17,21 @@ public class Menu {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "storeHouse_id")
-    private Long storeHouse;
+    private StoreHouse storeHouse_id;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "deliver_id")
-    private Long deliver;
+    private Deliver deliver;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "destination_id")
-    private Long destination;
+    private Destination destination;
 
-
-    public Menu(Long parcel, Long storeHouse, Long deliver, Long destination) {
+    public Menu(Long parcel, StoreHouse storeHouse_id, Deliver deliver, Destination destination) {
+        this.parcel = parcel;
+        this.storeHouse_id = storeHouse_id;
+        this.deliver = deliver;
+        this.destination = destination;
     }
 
     public Long getParcel() {
@@ -39,27 +42,27 @@ public class Menu {
         this.parcel = parcel;
     }
 
-    public Long getStoreHouse() {
-        return storeHouse;
+    public StoreHouse getStoreHouse_id() {
+        return storeHouse_id;
     }
 
-    public void setStoreHouse(Long storeHouse) {
-        this.storeHouse = storeHouse;
+    public void setStoreHouse_id(StoreHouse storeHouse_id) {
+        this.storeHouse_id = storeHouse_id;
     }
 
-    public Long getDeliver() {
+    public Deliver getDeliver() {
         return deliver;
     }
 
-    public void setDeliver(Long deliver) {
+    public void setDeliver(Deliver deliver) {
         this.deliver = deliver;
     }
 
-    public Long getDestination() {
+    public Destination getDestination() {
         return destination;
     }
 
-    public void setDestination(Long destination) {
+    public void setDestination(Destination destination) {
         this.destination = destination;
     }
 
@@ -67,7 +70,7 @@ public class Menu {
     public String toString() {
         return "Menu{" +
                 "parcel=" + parcel +
-                ", storeHouse=" + storeHouse +
+                ", storeHouse_id=" + storeHouse_id +
                 ", deliver=" + deliver +
                 ", destination=" + destination +
                 '}';

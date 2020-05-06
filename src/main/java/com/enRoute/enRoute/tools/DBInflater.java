@@ -37,7 +37,7 @@ public class DBInflater implements ApplicationListener<ContextRefreshedEvent> {
         StoreHouse SH1 = new StoreHouse(1L,"Sent","Sent");
         Deliver DL1 = new Deliver(1L, "Sent");
         Destination DS1 = new Destination(1L, "Waiting", "Waiting");
-        Menu ME1 = new Menu(1L,1L,1L,1L);
+        Menu ME1 = new Menu(1L, 1L, 1L, 1L);
 
         storeHouseRepository.save(SH1);
         deliverRepository.save(DL1);

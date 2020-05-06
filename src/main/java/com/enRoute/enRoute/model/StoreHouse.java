@@ -9,8 +9,8 @@ import java.util.Set;
 public class StoreHouse {
 
     @Id
-    @Column(name="storeHouse_id")
-    private Long storeHouse;
+    @Column(name = "storeHouse_id")
+    private Long storeHouse_id;
     @Column(name = "storeHouse_city")
     private String city;
     @Column(name = "storeHouse_name")
@@ -19,18 +19,18 @@ public class StoreHouse {
     public StoreHouse() {
     }
 
-    public StoreHouse(Long storeHouse, String city, String name) {
-        this.storeHouse = storeHouse;
+    public StoreHouse(Long storeHouse_id, String city, String name) {
+        this.storeHouse_id = storeHouse_id;
         this.city = city;
         this.name = name;
     }
 
-    public Long getStoreHouse() {
-        return storeHouse;
+    public Long getStoreHouse_id() {
+        return storeHouse_id;
     }
 
-    public void setStoreHouse(Long storeHouse) {
-        this.storeHouse = storeHouse;
+    public void setStoreHouse_id(Long storeHouse_id) {
+        this.storeHouse_id = storeHouse_id;
     }
 
     public String getCity() {
@@ -52,7 +52,7 @@ public class StoreHouse {
     @Override
     public String toString() {
         return "StoreHouse{" +
-                "storeHouse=" + storeHouse +
+                "storeHouse_id=" + storeHouse_id +
                 ", city='" + city + '\'' +
                 ", name='" + name + '\'' +
                 '}';
