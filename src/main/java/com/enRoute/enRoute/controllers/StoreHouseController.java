@@ -14,9 +14,9 @@ public class StoreHouseController {
         this.storeHouseRepository = storeHouseRepository;
     }
 
-    @RequestMapping("/storehouses")
-    public String getStoreHouses(Model model){
-        model.addAttribute("storehouses", storeHouseRepository.findAll());
-        return "storehouses";
+    @RequestMapping("/storehouse")
+    public String getStoreHouse(Model model){
+        model.addAttribute("storehouse", storeHouseRepository.findAll());
+        return "storehouse";
     }
 }

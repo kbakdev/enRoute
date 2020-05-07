@@ -16,11 +16,11 @@ public class DestinationController {
 
     }
 
-    @RequestMapping("/destinations")
-    public String getDestinations(Model model) {
+    @RequestMapping("/destination")
+    public String getDestination(Model model) {
 
-        model.addAttribute("destinations", destinationRepository.findAll());
+        model.addAttribute("destination", destinationRepository.findAll());
 
-        return "destinations";
+        return "destination";
     }
 }
