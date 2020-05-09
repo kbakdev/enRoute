@@ -1,11 +1,21 @@
-<center>
-<h1>Welcome to Spring Boot Security</h1>
-
-<h2>Login Page</h2>
-
-<form method="POST" action="/login">
-	User Name : <input type="text" name="username" value="user"/><br><br>
-	Password  : <input type="password" name="password" value="password"/><br><br>
-	<input type="submit" name="submit"/>
-</form>
-</center>
+<html>
+<head></head>
+<body>
+   <h1>Login</h1>
+   <form name='f' action="login" method='POST'>
+      <table>
+         <tr>
+            <td>User:</td>
+            <td><input type='text' name='username' value=''></td>
+         </tr>
+         <tr>
+            <td>Password:</td>
+            <td><input type='password' name='password' /></td>
+         </tr>
+         <tr>
+            <td><input name="submit" type="submit" value="submit" /></td>
+         </tr>
+      </table>
+  </form>
+</body>
+</html>
