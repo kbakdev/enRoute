@@ -1,30 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EnRoute - Log In</title>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Righteous&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico">
-    <link rel="shortcut icon" href="favicon.ico" type="imag/x-icon">
-    <link rel="stylesheet" href="./../../webapp/resources/theme1/css/login.css">
-
+    <title>Log In</title>
 </head>
-<div class="container">
-    <form id="login">
-        <div class="header">
-            <h1>Log In</h1>
-        </div>
-        <div class="sep"></div>
-        <div class="inputs">
-            <input type="LOGIN" placeholder="LOGIN" autofocus/>
-            <input type="PASSWORD" placeholder="PASSWORD" />
-            <div class="remember">
-                <input name="cecky" id="checky" value="1" type="checkbox" />
-                <label class="terms">REMEMBER ME</label>
-            </div>
-            <a id="submit" href="#">Log In</a>
-        </div>
-    </form>
+<body>
+<div th:if="${param.error}">
+    Invalid username and password.
 </div>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+<form th:action="@{/login}" method="post">
+    <div><label> User Name : <input type="text" name="username"/> </label></div>
+    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div><input type="submit" value="Sign In"/></div>
+</form>
+</body>
 </html>

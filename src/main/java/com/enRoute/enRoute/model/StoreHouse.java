@@ -1,8 +1,6 @@
 package com.enRoute.enRoute.model;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 public class StoreHouse {
