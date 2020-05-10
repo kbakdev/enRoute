@@ -19,10 +19,11 @@
         </property>
         <property name="suffix">
             <value>.jsp</value>
+            <value>.ico</value>
         </property>
     </bean>
 
-    <mvc:resources mapping="/resources/**" location="/resources/theme1/"
+    <mvc:resources mapping="/resources/**" location="/resources/**"
                    cache-period="31556926"/>
 
     <mvc:annotation-driven />
