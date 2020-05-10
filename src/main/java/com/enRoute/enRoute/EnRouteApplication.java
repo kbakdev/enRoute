@@ -21,7 +21,6 @@ public class EnRouteApplication {
 						.authorizeRequests()
 							.antMatchers("/h2-console/**").hasRole("ADMIN")//allow h2 console access to admins only
 							.antMatchers("/login*").permitAll()
-							.antMatchers( "/favicon.ico").permitAll()
 							.and()
 						.formLogin()
 							.loginPage("/login") //enable form login instead of basic login
