@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class AppController {
 
-    @RequestMapping("/**")
+    @RequestMapping("/userInfo")
     public String handler(ModelMap model, HttpServletRequest request) {
         Authentication auth = SecurityContextHolder.getContext()
                 .getAuthentication();
