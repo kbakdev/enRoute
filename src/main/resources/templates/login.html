@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org/"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3%22%3E
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3%22%3E"
+      xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
     <title>Log In</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Righteous&display=swap" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="..\src\main\webapp\resources\theme1\css\login.css">
-<link rel="shortcut icon" href="..\static\favicon-16x16.png">
 </head>
 <body>
 <div class="container">
-    <form id="login" th:action="@{/login}" method="post">
+
+    <form action="login" method="post" modelAttribute="loginForm">
         <div class="header">
             <h1>Log In</h1>
         </div>
@@ -25,12 +26,17 @@
         </div>
         <div class="inputs">
 
-            <div>  <input type="LOGIN" placeholder="LOGIN" autofocus/> </div>
-            <div>  <input type="PASSWORD" placeholder="PASSWORD" /> </div>
+            <div><input type="username" path="username" placeholder="username" autofocus/>
+                 <form: input type="text" path="username" placeholder="username" autofocus/> </div>
+
+            <div><input type="password" path="password" placeholder="password" />
+                 <form: input type="password" path="password" placeholder="password" /> </div>
+
             <div class="remember">
                 <input name="cecky" id="checky" value="1" type="checkbox" />
                 <label class="terms">REMEMBER ME</label>
             </div>
+
             <input type="submit" id="submit" value="Sign In"/>
         </div>
     </form>

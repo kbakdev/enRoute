@@ -18,23 +18,21 @@ public class EnRouteApplication {
 			@Override
 			protected void configure(final HttpSecurity http) throws Exception {
 				http.csrf().disable()
+
 						.authorizeRequests()
-							.antMatchers("/h2-console/**").hasRole("ADMIN")//allow h2 console access to admins only
-							.antMatchers("/login*").permitAll()
-							.and()
-						.formLogin()
-							.loginPage("/login") //enable form login instead of basic login
-							.permitAll()
-							.loginProcessingUrl("/perform_login")
-							.defaultSuccessUrl("/home", true)
-							.failureUrl("/login?error=true")
-							.and()
+						.antMatchers("/h2-console/**").hasRole("ADMIN")//allow h2 console access to admins only
+						.antMatchers("/anonymous*").anonymous()
+						.antMatchers("/login*").permitAll()
+						.anyRequest().authenticated()//all other urls can be access by any authenticated role
+						.and().formLogin().loginPage("/login")//enable form login instead of basic login
+						.loginProcessingUrl("/perform_login")
+						.defaultSuccessUrl("/home", true)
+						.failureUrl("/login?error=true")
+						.and()
 						.logout()
-							.permitAll()
-							.logoutUrl("/logout")
-							.and().csrf().ignoringAntMatchers("/h2-console/**")//don't apply CSRF protection to /h2-console
-							.and().headers().frameOptions().sameOrigin()
-				;//allow use of frame to same origin urls
+						.logoutUrl("/perform_logout")
+						.and().csrf().ignoringAntMatchers("/h2-console/**")//don't apply CSRF protection to /h2-console
+						.and().headers().frameOptions().sameOrigin();//allow use of frame to same origin urls
 			}
 
 			@Override
