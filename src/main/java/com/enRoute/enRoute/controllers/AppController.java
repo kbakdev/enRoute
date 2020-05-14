@@ -1,12 +1,10 @@
 package com.enRoute.enRoute.controllers;
 
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.servlet.http.HttpServletRequest;
 
 /** @author Kacper Bąk
  * The class is designed to show all information about the logged in user. It was created with the application testing in mind.
@@ -20,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class AppController {
 
-    @RequestMapping("/userInfo")
+    @org.springframework.web.bind.annotation.GetMapping("/userInfo")
     public String handler(ModelMap model, HttpServletRequest request) {
         Authentication auth = SecurityContextHolder.getContext()
                 .getAuthentication();
