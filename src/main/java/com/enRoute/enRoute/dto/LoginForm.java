@@ -1,5 +1,11 @@
 package com.enRoute.enRoute.dto;
 
+/**
+ * @author Kacper Bąk
+ * It is a simple form of login, thanks to which we can download login and password.
+ */
+
+
 public class LoginForm {
 
     private String username;

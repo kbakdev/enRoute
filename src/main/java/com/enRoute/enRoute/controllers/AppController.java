@@ -8,6 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
+/** @author Kacper Bąk
+ * The class is designed to show all information about the logged in user. It was created with the application testing in mind.
+ * @param uri
+ * @param user
+ * @param roles
+ * @return userInfo
+ */
+
+
 @Controller
 public class AppController {
 
@@ -18,6 +27,6 @@ public class AppController {
         model.addAttribute("uri", request.getRequestURI());
         model.addAttribute("user", auth.getName());
         model.addAttribute("roles", auth.getAuthorities());
-        return "app";
+        return "userInfo";
     }
 }

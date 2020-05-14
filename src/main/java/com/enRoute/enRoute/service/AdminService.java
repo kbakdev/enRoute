@@ -7,6 +7,12 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author Kacper Bąk
+ * It's Spring Service for admin.
+ * The class checks if someone is trying to log in to the administration panel, and then sends an appropriate message to the logs about who tried to do it.
+ */
+
 @Service
 public class AdminService {
 

@@ -11,6 +11,30 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author Kacper Bąk, Paweł Norwa
+ * A basic database with built-in information that you can base on.
+ * The whole is made in H2 based on SQL.
+ *
+ * @param storeHouse_id
+ * @param city
+ * @param name
+ * @param deliver_id
+ *
+ * @param deliverRepository
+ * @param destinationRepository
+ * @param menuRepository
+ * @param storeHouseRepository
+ *
+ * @param contextRefreshedEvent
+ *
+ * @param parcel
+ * @param storeHouse
+ * @param deliver
+ * @param destination
+ */
+
+
 @Component
 public class DBInflater implements ApplicationListener<ContextRefreshedEvent> {
 

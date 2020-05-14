@@ -2,6 +2,11 @@ package com.enRoute.enRoute.model;
 
 import javax.persistence.*;
 
+/**
+ * @author Kacper Bąk, Paweł Norwa
+ */
+
+
 @Entity
 public class StoreHouse {
 

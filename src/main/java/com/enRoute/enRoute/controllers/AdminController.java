@@ -6,6 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.enRoute.enRoute.service.AdminService;
 
+/**
+ * @author Kacper Bąk
+ * The control for the admin, which is responsible for managing the site by logging into the administrative panel.
+ * If the person is not authorized to do so, he is redirected to "/index" address.
+ */
+
+
 @Controller
 public class AdminController {
 

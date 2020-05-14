@@ -9,6 +9,15 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 import javax.sql.DataSource;
 
+/**
+ * @author Kacper Bąk, Paweł Norwa
+ * The main class that opens the entire application.
+ * It connects to the database from which it retrieves user data.
+ * Here is the entire application configuration.
+ * We also used a builder to build a good SQL database connection.
+ * @param dataSource
+ */
+
 @SpringBootApplication
 public class EnRouteApplication {
 
