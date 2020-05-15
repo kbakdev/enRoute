@@ -1,26 +1,27 @@
 package com.enRoute.enRoute;
 
-import javax.sql.DataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import javax.sql.DataSource;
 
-/**
- * @author Kacper Bąk, Paweł Norwa
- * The main class that opens the entire application.
- * It connects to the database from which it retrieves user data.
- * Here is the entire application configuration.
- * We also used a builder to build a good SQL database connection.
- * @param dataSource
- */
 
 @SpringBootApplication
 public class EnRouteApplication {
 
+	/**
+	 * @author Kacper Bąk, Paweł Norwa
+	 * The main class that opens the entire application.
+	 * It connects to the database from which it retrieves user data.
+	 * Here is the entire application configuration.
+	 * We also used a builder to build a good SQL database connection.
+	 * @param dataSource
+	 */
 	@Bean
 	public WebSecurityConfigurerAdapter webSecurityConfig(DataSource dataSource) {
 		return new WebSecurityConfigurerAdapter() {
@@ -28,20 +29,11 @@ public class EnRouteApplication {
 			protected void configure(final HttpSecurity http) throws Exception {
 				http.csrf().disable()
 
-
-
 						.authorizeRequests()
 						.antMatchers("/h2-console/**").hasRole("ADMIN")//allow h2 console access to admins only
 						.antMatchers("/anonymous*").anonymous()
-						
-						.antMatchers(
-								"/",
-								"/js/**",
-								"/css/**",
-								"/img/**",
-								"/webjars/**").permitAll()
-
 						.antMatchers("/login*").permitAll()
+						.antMatchers("/css/**").permitAll()
 						.anyRequest().authenticated()//all other urls can be access by any authenticated role
 						.and().formLogin().loginPage("/login")//enable form login instead of basic login
 						.loginProcessingUrl("/perform_login")

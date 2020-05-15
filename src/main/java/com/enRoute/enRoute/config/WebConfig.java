@@ -21,7 +21,7 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "com.enRoute.enRoute.controllers" })
+//@ComponentScan(basePackages = { "com.enRoute.enRoute.controllers" })
 public class WebConfig implements WebMvcConfigurer {
 
 
@@ -33,14 +33,16 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+        registry.addResourceHandler(
+                "/css/**")
+                .addResourceLocations(
+                        "classpath:/static/css/");
     }
 
     /**
      * @author Kacper Bąk
      * With this method, we specify the language that will be used in the Web API, but at the moment this feature is not covered.
      * @param registry
-     * @param lang
      */
 
     @Override
