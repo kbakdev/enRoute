@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html
+        xmlns:th="http://www.thymeleaf.org"
+>
+
+<body>
+    <header>
+        <h2>Spring Secured App</h2>
+        <p>app content ......... at uri <span th:text="${uri}"/></p>
+        <p>User: <span th:text="${user}"/></p>
+        <p>Roles: <span th:text="${roles}"/></p>
+        <br/>
+        <form action="/logout" method="post">
+            <input type="hidden"
+                th:name="${_csrf.parameterName}"
+                    th:value="${_csrf.token}"/>
+            <input type="submit" value="Logout">
+        </form>
+    </header>
+</body>
+</html>
