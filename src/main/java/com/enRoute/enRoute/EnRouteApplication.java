@@ -1,5 +1,6 @@
 package com.enRoute.enRoute;
 
+import javax.sql.DataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -7,7 +8,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-import javax.sql.DataSource;
 
 /**
  * @author Kacper Bąk, Paweł Norwa
@@ -28,9 +28,19 @@ public class EnRouteApplication {
 			protected void configure(final HttpSecurity http) throws Exception {
 				http.csrf().disable()
 
+
+
 						.authorizeRequests()
 						.antMatchers("/h2-console/**").hasRole("ADMIN")//allow h2 console access to admins only
 						.antMatchers("/anonymous*").anonymous()
+						
+						.antMatchers(
+								"/",
+								"/js/**",
+								"/css/**",
+								"/img/**",
+								"/webjars/**").permitAll()
+
 						.antMatchers("/login*").permitAll()
 						.anyRequest().authenticated()//all other urls can be access by any authenticated role
 						.and().formLogin().loginPage("/login")//enable form login instead of basic login

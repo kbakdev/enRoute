@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.w3.org/1999/xhtml"
-
-
-
-lang="en">
+<html lang="en"
+      xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href="../static/css/login.css" th:href="@{/css/login.css}" rel="stylesheet" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/login.css}"/>
 
     <title>Login page</title>
 </head>
 <body>
 <h1>Login page</h1>
-<p th:if="${loginError}" class="error">Wrong user or password</p>
-<form th:action="@{/login}" method="post">
+<p class="error" th:if="${loginError}">Wrong user or password</p>
+<form method="post" th:action="@{/login}">
     <label for="username">Username</label>:
-    <input type="text" id="username" name="username" autofocus="autofocus" /> <br />
+    <input autofocus="autofocus" id="username" name="username" type="text"/> <br/>
     <label for="password">Password</label>:
-    <input type="password" id="password" name="password" /> <br />
-    <input type="submit" value="Log in" />
+    <input id="password" name="password" type="password"/> <br/>
+    <input type="submit" value="Log in"/>
 </form>
 </body>
 </html>
