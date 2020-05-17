@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 import javax.sql.DataSource;
@@ -34,6 +33,7 @@ public class EnRouteApplication {
 						.antMatchers("/anonymous*").anonymous()
 						.antMatchers("/login*").permitAll()
 						.antMatchers("/css/**").permitAll()
+						.antMatchers("/img/**").permitAll()
 						.anyRequest().authenticated()//all other urls can be access by any authenticated role
 						.and().formLogin().loginPage("/login")//enable form login instead of basic login
 						.loginProcessingUrl("/perform_login")
