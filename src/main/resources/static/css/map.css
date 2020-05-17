@@ -15,11 +15,32 @@ body {
     background-color: rgba(0,0,0,.5);
     height: 100vh;
 }
+.section {
+    padding: 20px 0 0 0;
+    margin: 0 auto;
+    display: block;
+}
 h1 {
     margin: 0;
-    padding: 0 0 20px;
     color: #FFFFFF;
     font-weight: bold;
     text-align: center;
     font-size: 35px;
+}
+.sep {
+    position: absolute;
+    height: 1px;
+    background: #DC143C;
+    width: 370px;
+    left: 50%;
+    margin-left: -185px;
+}
+
+.sep2 {
+    position: absolute;
+    height: 1px;
+    background: #DC143C;
+    width: 370px;
+    left: 50%;
+    margin-left: -185px;
 }
