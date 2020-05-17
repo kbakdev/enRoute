@@ -1,18 +1,23 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html
         lang="en"
         xmlns:th="http://www.w3.org/1999/xhtml"
 >
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EnRoute - Index</title>
+    <title>EnRoute</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Righteous&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/static/css/index.css}" >
-    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <link type="text/css" rel="stylesheet" th:href="@{/css/index.css}" >
+    <link href="favicon.png" rel="icon" type="image/x-icon">
 
 </head>
 <body>
-<p>Click <a th:href="@{/login}">here</a> to log in.</p>
+    <div id="wrapper">
+        <header>
+        </header>
+        <nav>
+            <a class="menu active" href="#">ABOUT US</a><a class="menu" href="#">SETTINGS</a><a class="menu" href="#">MAP</a><a class="menu" href="#">CONTACT</a>
+        </nav>
+    </div>
 </body>
 </html>
