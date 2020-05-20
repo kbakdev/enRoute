@@ -1,13 +1,12 @@
 package com.enRoute.enRoute;
 
+import javax.sql.DataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-
-import javax.sql.DataSource;
 
 
 @SpringBootApplication
@@ -32,8 +31,7 @@ public class EnRouteApplication {
 						.antMatchers("/h2-console/**").hasRole("ADMIN")//allow h2 console access to admins only
 						.antMatchers("/anonymous*").anonymous()
 						.antMatchers("/login*").permitAll()
-						.antMatchers("/css/**").permitAll()
-						.antMatchers("/img/**").permitAll()
+						.antMatchers("/assets/**").permitAll()
 						.anyRequest().authenticated()//all other urls can be access by any authenticated role
 						.and().formLogin().loginPage("/login")//enable form login instead of basic login
 						.loginProcessingUrl("/perform_login")

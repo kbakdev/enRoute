@@ -1,7 +1,6 @@
 package com.enRoute.enRoute.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.LocaleResolver;
@@ -33,10 +32,8 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler(
-                "/css/**", "/img/**")
-                .addResourceLocations(
-                        "/static/img/","classpath:/static/css/");
+        registry.addResourceHandler("/assets/**")
+                .addResourceLocations("classpath:/static/");
     }
 
     /**

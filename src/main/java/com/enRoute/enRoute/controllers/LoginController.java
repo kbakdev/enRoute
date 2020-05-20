@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class LoginController {
-    private RequestCache requestCache = new HttpSessionRequestCache();
+    private final RequestCache requestCache = new HttpSessionRequestCache();
 
     /**
      * Demonstrates that {@link HttpServletRequest#authenticate(HttpServletResponse)} will send the user to the log in
@@ -48,7 +48,7 @@ public class LoginController {
      *
      */
 
-    @RequestMapping(value = "/{login}", method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(HttpServletRequest request, HttpServletResponse response, @ModelAttribute LoginForm loginForm,
                         BindingResult result) throws ServletException {
         try {
@@ -66,7 +66,7 @@ public class LoginController {
         }
     }
 
-    @RequestMapping(value = "/{login}", method = RequestMethod.GET)
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(@ModelAttribute LoginForm loginForm) {
         return "login";
     }
@@ -75,7 +75,7 @@ public class LoginController {
      * Demonstrates that invoking {@link HttpServletRequest#logout()} will log the user out.
      * We then redirect the user to the home page.
      */
-    @RequestMapping("/{logout}")
+    @RequestMapping("/logout")
     public String logout(HttpServletRequest request) throws ServletException {
         request.logout();
         return "redirect:/";
