@@ -51,6 +51,8 @@ public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(HttpServletRequest request, HttpServletResponse response, @ModelAttribute LoginForm loginForm,
                         BindingResult result) throws ServletException {
+
+
         try {
             request.login(loginForm.getUsername(), loginForm.getPassword());
             SavedRequest savedRequest = requestCache.getRequest(request, response);

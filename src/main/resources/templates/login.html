@@ -13,24 +13,24 @@
     <title>EnRoute - Login</title>
 </head>
 <body>
-    <div class=container>
-        <h1>Sign In</h1>
-        <div class="sep">
-            <p th:if="${loginError}" class="error">Wrong user or password</p>
-            <form th:action="@{/login}" method="post">
-                <div class="inputs">
-                    <label for="username"></label>:
-                    <input type="text" id="username" name="username" autofocus="autofocus" placeholder="USERNAME"/> <br />
-                    <label for="password"></label>:
-                    <input type="password" id="password" name="password" placeholder="PASSWORD"/> <br />
-                    <div class="remember">
-                        <input name="cecky" id="checky" value="1" type="checkbox" />
-                        <label class="terms">REMEMBER ME</label>
-                    </div>
-                    <input type="submit" value="LOGIN" />
+<div class=container>
+    <h1>Sign In</h1>
+    <div class="sep">
+        <p class="error" th:if="${loginError}">Wrong user or password</p>
+        <form method="post" th:action="@{/login}">
+            <div class="inputs">
+                <label for="username"></label>:
+                <input autofocus="autofocus" id="username" name="username" placeholder="USERNAME" type="text"/> <br/>
+                <label for="password"></label>:
+                <input id="password" name="password" placeholder="PASSWORD" type="password"/> <br/>
+                <div class="remember">
+                    <input id="checky" name="cecky" type="checkbox" value="1"/>
+                    <label class="terms">REMEMBER ME</label>
                 </div>
-            </form>
-        </div>
+                <input type="submit" value="LOGIN"/>
+            </div>
+        </form>
     </div>
+</div>
 </body>
 </html>
