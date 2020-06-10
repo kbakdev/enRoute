@@ -20,6 +20,20 @@
         <nav>
             <a class="menu active" href="#">ABOUT US</a><a class="menu" href="#">SETTINGS</a><a class="menu" href="#">MAP</a><a class="menu" href="#">CONTACT</a>
         </nav>
+        <div style="color:yellow">
+            <table>
+                <tr>
+                    <th>Delivery Number</th>
+                    <th>Deliverer</th>
+
+                </tr>
+                <tr th:each="deliver : ${deliver}">
+                    <td th:text="${deliver.deliver_id}">1</td>
+                    <td th:text="${deliver.name}">Ups</td>
+                </tr>
+            </table>
+        </div>
     </div>
+
 </body>
 </html>
