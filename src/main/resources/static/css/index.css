@@ -39,7 +39,7 @@ nav{
     font-weight: bold;
     font-size: 14px;
 }
-.burger div{
+.dropdown div{
     width: 25px;
     height: 5px;
     background-color: #DC143C;

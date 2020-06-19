@@ -14,29 +14,6 @@
 
 </head>
 <body>
-<<<<<<< Updated upstream
-    <div id="wrapper">
-        <header>
-        </header>
-        <nav>
-            <a class="menu active" href="#">ABOUT US</a><a class="menu" href="#">SETTINGS</a><a class="menu" href="#">MAP</a><a class="menu" href="#">CONTACT</a>
-        </nav>
-        <div style="color:yellow">
-            <table>
-                <tr>
-                    <th>Delivery Number</th>
-                    <th>Deliverer</th>
-
-                </tr>
-                <tr th:each="deliver : ${deliver}">
-                    <td th:text="${deliver.deliver_id}">1</td>
-                    <td th:text="${deliver.name}">Ups</td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
-=======
     <nav>
         <div class="logo">
             <h4>En Route</h4>
@@ -55,12 +32,15 @@
                 <a href="contact.html">Contact</a>
             </li>
         </ul>
-        <div class="burger">
+        <div class="dropdown">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>
+                <ul>
+                    <li><a href="map.html">MAP</a></li>
+                    <li><a href="map.html">MAP</a></li>
+                </ul>
         </div>
     </nav>
->>>>>>> Stashed changes
 </body>
 </html>

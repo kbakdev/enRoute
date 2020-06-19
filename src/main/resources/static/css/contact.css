@@ -38,7 +38,7 @@ nav{
     font-weight: bold;
     font-size: 14px;
 }
-.burger div{
+.dropdown div{
     width: 25px;
     height: 5px;
     background-color: #DC143C;
@@ -74,8 +74,8 @@ h1{
 .cover2 {
     position: absolute;
     width: 516px;
-    height: 516px;
-    max-width: 516px;
+    height: 586px;
+    max-width: 586px;
     margin: 0 auto;
     top: 50%;
     left: 50%;
@@ -83,4 +83,22 @@ h1{
     background: rgba(0,0,0,.5);
     box-sizing: border-box;
     padding: 80px 40px;
+}
+h3{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-decoration: #DC143C underline;
+
+}
+h2{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFFFFF;
 }
