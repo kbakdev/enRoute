@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 
 @Controller
-public class HelpController {
+public class ContactController {
 
-    @GetMapping("/help")
+    @GetMapping("/contact")
 
     public String help(String help) {
-        return "help";
+        return "contact";
     }
 }

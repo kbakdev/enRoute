@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 
 @Controller
-public class SettingsController {
+public class PricesController {
 
-    @GetMapping("/settings")
+    @GetMapping("/prices")
     public String settings(String settings) {
-        return "settings";
+        return "prices";
     }
 }
